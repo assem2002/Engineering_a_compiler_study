@@ -1,0 +1,25 @@
+1)
+S = [s0....s6,se]
+possible_symbols = ['a','b',.....,'z']
+δ = [(s0,a..z)=s1,
+    (s1,a..z)=s2,
+    (s2,a..z)=s3,
+    (s3,a..z)=s4,
+    (s4,a..z)=s5,
+    (s5,a..z)=s6,
+    (si, others) =se
+]
+Sa = [s1,...s6]
+s0 = s0
+
+-----------
+2)
+s = [s0,s1,s2,se]
+possible_symbols = [a...b]
+δ = [(s0,'{')=s1,
+    (s1,a..z)=s1,
+    (s1,'}')=s2,
+    se-implied,
+]
+s0 = s0
+Sa = [s2]

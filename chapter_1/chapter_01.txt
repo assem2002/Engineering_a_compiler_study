@@ -1,0 +1,26 @@
+1. 
+    - Shows me syntax error of the language as I don't want to have a running program that actually isn't language confied.
+    - I care much about the runtime speed of the resulting coding.
+    - it gives my the flexibility to change some stuff through the compiler pipline
+
+    I'm not sure I understand the question of "will I change the list if I'm the writer".
+    but for sure I'll write a whole different list, If i'm the writer/developer of a compiler.
+
+    - I'd care about how easily I could fetch bugs by placing pot holes everywhere that exposes potential bugs.
+    - I'd care about easier structures to reason about (mainly referring the IR)
+
+2. I don't think compilation gives us any adventage in the UI world, in addition, based on what I know about UI and specifically
+react library. You keep modifying the html tree inpalce and the change just pops up immediately, I think interpertation is the best in this case.
+
+3.
+    a - its parser needs to be more sphosticated as now we don't have input that gets parsed but rather a stream.
+    I can't think of other parts, but I think the compiler would need to leverage the idea of components by really compiling sections in very separate componenets as the UI usually changes state.
+
+    b - I can see no issue. The backend just needs to find about the new ISA (probably map instructions)
+
+    c - probably would still have a similar frontend, very naive optimizer just for illustiration, the 
+    language syntax must have a very small set of expressions, statement, etc.
+    backend supporting the very basic ISA in the targetd machine (which is corrolary to the language syntax point above)
+
+    d&e- I'm not sure if we're referring to the idea of distributed system, if so, I think we'd the user of the compiler to help
+    us by giving some information about what kind of operations could be separated and based on that information, we can easily give a plan on how to distribute things based on how/when the numerical data is accessed.
