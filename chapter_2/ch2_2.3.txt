@@ -1,0 +1,14 @@
+1 )
+    ([A. . . Z ] | [a. . . z ]) ([A. . . Z ] | [a. . . z ] | [0. . . 9 ])5
+    Taken that : 
+    re1 = [A. . . Z ]
+    re2 = [a. . . z ]
+    re3 = [0. . . 9 ]
+    hence :
+    (re1 | re2) (re1|re2|re3) (re1|re2|re3) (re1|re2|re3) (re1|re2|re3) (re1|re2|re3)
+
+2 )
+RE = "(^"|"")*"
+
+I just found out that the kleene clousre as working coding is somehow coupled to the next state is some special way.
+I think the next section should illustrate more.
