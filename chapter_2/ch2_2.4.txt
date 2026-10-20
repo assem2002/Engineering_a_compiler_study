@@ -1,0 +1,14 @@
+Question 2 -- Minimze the DFA shown in the margin.
+
+
+Final result is
+P8 = {s0}
+P9 = {s5}
+P6 = {s1, s6}
+P4 = {s2, s7}
+P2 = {s3, s8}
+P0 = {s4, s9}
+
+P8 -t-> P9 -h-> P4 -r-> P2 -e-> (P0)   
+|               ^
+ -h-> P6 ---e---|

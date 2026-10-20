@@ -15,7 +15,7 @@ s0 = s0
 -----------
 2)
 s = [s0,s1,s2,se]
-possible_symbols = [a...b]
+possible_symbols = [a...b,"{","}"]
 δ = [(s0,'{')=s1,
     (s1,a..z)=s1,
     (s1,'}')=s2,
