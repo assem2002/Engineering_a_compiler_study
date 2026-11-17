@@ -1,0 +1,97 @@
+1)
+
+No classifier needed -- there's no duplicates.
+
+
+s0 : 
+clear stack;
+push( bad );
+char ← NextChar();
+lexeme ← char;
+push( s0 );
+if (char = ‘a’)
+then goto s1 ;
+if (char = ‘b’)
+then goto s2 ;
+if (char = ‘c’)
+then goto s3 ;
+else goto sout ;
+
+s1 : 
+char ← NextChar();
+lexeme ← lexeme + char;
+push( s1 );
+if (char = ‘b’)
+then goto s4 ;
+else goto sout ;
+
+s2 : 
+char ← NextChar();
+lexeme ← lexeme + char;
+push( s2 );
+if (char = ‘c’)
+then goto s5 ;
+else goto sout ;
+
+s3 : 
+char ← NextChar();
+lexeme ← lexeme + char;
+push( s3 );
+if (char = ‘a’)
+then goto s6 ;
+else goto sout ;
+
+s4 : 
+char ← NextChar();
+lexeme ← lexeme + char;
+push( s4 );
+if (char = ‘c’)
+then goto s7 ;
+else goto sout ;
+
+s5 : 
+char ← NextChar();
+lexeme ← lexeme + char;
+push( s5 );
+if (char = ‘a’)
+then goto s8 ;
+else goto sout ;
+
+s6 : 
+char ← NextChar();
+lexeme ← lexeme + char;
+push( s6 );
+if (char = ‘b’)
+then goto s9 ;
+else goto sout ;
+
+
+s7:
+s8:
+s9:
+goto sout ;
+
+sout : 
+state ← se ;
+while (state is not in SA and state != bad ) do
+state ← pop();
+if state != bad then
+truncate lexeme;
+RollBack();
+end;
+if state ∈ SA
+then return Type[state];
+else return invalid;
+
+
+-----------------------------
+2 )
+
+
+Based on my understanding :
+that DFA would produce 27 final states.
+after minimization -- it's just 3 states
+s0 --(a|b|c)--> s1 --(a|b|c)--> s2 --(a|b|c)--> s3
+Yes it's less when it comes to states, but DFA cost is relative to word being scanned.
+so both DFA same cost.
+but the additional TABLE look up would add an additional cost of O(sum_length_of_identifiers)

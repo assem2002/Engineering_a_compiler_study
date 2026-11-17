@@ -1,0 +1,89 @@
+1.a)
+all of the followings could be accepted again
+either accepts bbbbbbb...
+or bbbbbbbbbbbbbb... followed by single a
+
+RE =  (b|b*a)*
+
+
+1.b)
+L1 = 0 0 (0|1)*
+L2 = (0 1)* L1
+L3 = 1 1 (0|1)*
+L4 = (1 0)* L3
+L5 = (0 1)* (L3 | L4)
+L6 = (1 0)* (L1 | L2)
+
+probably RE =  L5 | L6 
+
+1.c)
+L1 = (ab)*
+L2 = b*
+L3 = a
+L4 = L2 L3
+L5 = L1 L4
+---
+L6 = a
+L7 = a*
+L8 = L6 L7
+----
+L9 = b
+L10 = a*
+L11 = L9 L10
+-----
+L12 = b
+L13 = b*
+L14 = L12 L13
+-----
+l15 = a
+L16 = (ab)*
+L17 = L13 L16 l15
+----
+L18 = a
+L19 = (a|b)*
+L20 = L18 L19
+----
+probably final RE = L5 L8 L11 L14 L17 L20
+
+
+------------------------------------------
+
+2.a ) 
+
+I'll use RE
+
+without the the rules -- RE = (a|b)*
+with rule_1 --> RE = a(a|b)*
+with rule_2 --> RE = (a|b)*baba(a|b*)
+final rule = a(a|b)* baba (a|b*)
+
+2.b)
+
+
+2.c)
+accepting = {s0, s4}
+
+transitions  :
+- (s0, 'a') = s1
+- (s0, 'b') = s2
+- (s0, 'c') = s0
+- (s1, 'a') = s0
+- (s1, 'b') = s4
+- (s1, 'c') = s1
+- (s2, 'a') = s4
+- (s2, 'b') = s3
+- (s2, 'c') = s2
+- (s3, 'a') = s5
+- (s3, 'b') = s0
+- (s3, 'c') = s3
+- (s4, 'a') = s2
+- (s4, 'b') = s5
+- (s4, 'c') = s4
+- (s5, 'a') = s3
+- (s5, 'b') = s6
+- (s5, 'c') = s5
+- (s6, 'a') = s0
+- (s6, 'b') = s4
+- (s6, 'c') = s6
+
+
